@@ -1,5 +1,13 @@
 ### HEAD
 
+### 0.0.2 (May 26th, 2015)
+
+*   Added autoload statement to composer.json file to automatically load application models and classes when the application is initialized.
+*   Created user model
+*   Added configuration option to app initialization file for enabling Twig templating within Slim framework.
+*   Turned on Twig debug mode and parser extension
+*   Created base default template and homepage view using Twig templating
+
 ### 0.0.1 (May 25th, 2015)
 
 *   Installed composer

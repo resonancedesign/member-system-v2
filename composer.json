@@ -1,4 +1,9 @@
 {
+    "autoload": {
+        "psr-4": {
+            "ResDesMS2\\": "app/ResDesMS2"
+        }
+    },
     "require": {
         "slim/slim": "~2.0",
         "slim/views": "0.1.*",
