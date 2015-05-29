@@ -1,5 +1,11 @@
 ### HEAD
 
+### 0.0.4 (May 29th, 2015)
+
+*   Updated dependencies via Composer
+*   Added password-compat dependency for backwards compatibility(>= 5.3.7) for latest PHP password functions.
+*   Created 'Hash' helper class for password hashing.
+
 ### 0.0.3 (May 28th, 2015)
 
 *   Changed navigation items

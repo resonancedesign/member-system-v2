@@ -7,6 +7,7 @@ use Slim\Views\TwigExtension;
 use Noodlehaus\Config;
 // Custom name-spaces
 use ResDesMS2\User\User;
+use ResDesMS2\Helpers\Hash;
 
 session_cache_limiter(false);
 session_start();
@@ -34,7 +35,9 @@ $app->container->set('user', function(){
 	return new User;
 });
 
-
+$app->container->singleton('hash', function() use ($app) {
+	return new Hash($app->config);
+});
 
 $view = $app->view();
 
@@ -45,3 +48,10 @@ $view->parserOptions = [
 $view->parserExtensions = [
 	new TwigExtension
 ];
+
+
+
+$password = 'Mungching1!';
+$hash = '$2y$10$A1YNp5TOql.1C33nMNFdzeuIN/7s.LGSq2mRK7rjnXRhdVBwmNIVm';
+
+var_dump($app->hash->passwordCheck($password, $hash));
