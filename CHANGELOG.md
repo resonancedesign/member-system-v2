@@ -1,5 +1,9 @@
 ### HEAD
 
+### 0.0.3 (May 28th, 2015)
+
+*   Changed navigation items
+
 ### 0.0.2 (May 26th, 2015)
 
 *   Added autoload statement to composer.json file to automatically load application models and classes when the application is initialized.
