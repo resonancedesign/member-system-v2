@@ -16,4 +16,17 @@ Class User extends Eloquent
 		'remember_ident',
 		'remember_token',
 	];
+
+	public function getFullName()
+	{
+		if (!$this->first_name || !$this->last_name) {
+			return null;
+		}
+		return "{$this->first_name} {$this->last_name}";
+	}
+
+	public function getFullNameOrUsername()
+	{
+		return $this->getFullName() ?: $this->username;
+	}
 }

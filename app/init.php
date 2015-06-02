@@ -8,6 +8,8 @@ use Noodlehaus\Config;
 // Custom name-spaces
 use ResDesMS2\User\User;
 use ResDesMS2\Helpers\Hash;
+use ResDesMS2\Validation\Validator;
+use ResDesMS2\Middleware\BeforeMiddleware;
 
 session_cache_limiter(false);
 session_start();
@@ -24,6 +26,8 @@ $app = new Slim([
 	'templates.path' => INC_ROOT . '/app/views'
 ]);
 
+$app->add(new BeforeMiddleware);
+
 $app->configureMode($app->config('mode'), function() use($app) {
 	$app->config = Config::load(INC_ROOT . "/app/config/{$app->mode}.php");
 });
@@ -31,12 +35,18 @@ $app->configureMode($app->config('mode'), function() use($app) {
 require 'database.php';
 require 'routes.php';
 
+$app->auth = false;
+
 $app->container->set('user', function(){
 	return new User;
 });
 
 $app->container->singleton('hash', function() use ($app) {
 	return new Hash($app->config);
+});
+
+$app->container->singleton('validation', function() use ($app) {
+	return new Validator($app->user);
 });
 
 $view = $app->view();
@@ -48,10 +58,3 @@ $view->parserOptions = [
 $view->parserExtensions = [
 	new TwigExtension
 ];
-
-
-
-$password = 'Mungching1!';
-$hash = '$2y$10$A1YNp5TOql.1C33nMNFdzeuIN/7s.LGSq2mRK7rjnXRhdVBwmNIVm';
-
-var_dump($app->hash->passwordCheck($password, $hash));

@@ -1,5 +1,12 @@
 ### HEAD
 
+### 0.0.5 (June 2nd, 2015)
+
+*   Created registration route with view and form with server-side validation
+*   Created login route with view and form with server-side validation
+*   Made navigation responsive to session state
+*   Created Middleware class to exchange data with Slim
+
 ### 0.0.4 (May 29th, 2015)
 
 *   Updated dependencies via Composer

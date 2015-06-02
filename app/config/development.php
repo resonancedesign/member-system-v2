@@ -4,7 +4,7 @@ return [
 	'app' => [
 		'url' => 'http://localhost',
 		'hash' => [
-			'algo' => crypt('mmistudios', '$2y$10'),
+			'algo' => PASSWORD_BCRYPT,
 			'cost' => 10
 		]
 	],
