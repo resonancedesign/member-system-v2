@@ -1,5 +1,9 @@
 ### HEAD
 
+### 0.0.6 (June 3rd, 2015)
+
+*   Added email sending functionality
+
 ### 0.0.5 (June 2nd, 2015)
 
 *   Created registration route with view and form with server-side validation

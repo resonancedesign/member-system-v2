@@ -7,8 +7,10 @@ use Slim\Views\TwigExtension;
 use Noodlehaus\Config;
 // Custom name-spaces
 use ResDesMS2\User\User;
+use ResDesMS2\Mail\Mailer;
 use ResDesMS2\Helpers\Hash;
 use ResDesMS2\Validation\Validator;
+
 use ResDesMS2\Middleware\BeforeMiddleware;
 
 session_cache_limiter(false);
@@ -47,6 +49,22 @@ $app->container->singleton('hash', function() use ($app) {
 
 $app->container->singleton('validation', function() use ($app) {
 	return new Validator($app->user);
+});
+
+$app->container->singleton('mail', function() use ($app) {
+	$mailer = new PHPMailer;
+
+	$mailer->IsSMTP();
+	$mailer->Host = $app->config->get('mail.host');
+	$mailer->SMTPAuth = $app->config->get('mail.smtp_auth');
+	$mailer->SMTPSecure = $app->config->get('mail.smtp_secure');
+	$mailer->Port = $app->config->get('mail.port');
+	$mailer->Username = $app->config->get('mail.username');
+	$mailer->Password = $app->config->get('mail.password');
+
+	$mailer->isHTML($app->config->get('mail.html'));
+
+	return new Mailer($app->view, $mailer);
 });
 
 $view = $app->view();
