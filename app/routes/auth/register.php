@@ -1,10 +1,10 @@
 <?php
 
-$app->get('/register', function() use($app) {
+$app->get('/register', $guest(), function() use($app) {
 	$app->render('auth/register.php');
 })->name('register');
 
-$app->post('/register', function() use($app) {
+$app->post('/register', $guest(), function() use($app) {
 	
 	$request = $app->request;
 
@@ -23,13 +23,18 @@ $app->post('/register', function() use($app) {
 	]);
 
 	if ($v->passes()) {
+
+		$ident = $app->randomlib->generateString(128);
+
 		$user = $app->user->create([
 			'email' => $email,
 			'username' => $username,
-			'password' => $app->hash->password($password)
+			'password' => $app->hash->password($password),
+			'active' => false,
+			'active_hash' => $app->hash->hash($ident)
 		]);
 
-		$app->mail->send('email/auth/registered.php', ['user' => $user], function($message) use ($user) {
+		$app->mail->send('email/auth/registered.php', ['user' => $user, 'ident' => $ident], function($message) use ($user) {
 			$message->to($user->email);
 			$message->subject('Thanks for registering.');
 		});

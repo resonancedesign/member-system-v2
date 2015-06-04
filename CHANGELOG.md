@@ -1,5 +1,12 @@
 ### HEAD
 
+### 0.0.7 (June 4th, 2015)
+
+*   Added random string generator
+*   Created extension to add compatibility of the hash_equals function to versions of PHP prior to 5.6
+*   Added user activation functionality
+*   Added user level filtering
+
 ### 0.0.6 (June 3rd, 2015)
 
 *   Added email sending functionality

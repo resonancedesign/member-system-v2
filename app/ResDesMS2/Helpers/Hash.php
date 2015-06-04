@@ -3,8 +3,8 @@
 namespace ResDesMS2\Helpers;
 
 /**
-* Password hashing
-* TODO: Add SHA256
+* Hashing
+* 
 */
 class Hash 
 {
@@ -24,7 +24,18 @@ class Hash
 		);
 	}
 
-	public function passwordCheck($password, $hash) {
+	public function passwordCheck($password, $hash)
+	{
 		return password_verify($password, $hash);
+	}
+
+	public function hash($input)
+	{
+		return hash('SHA256', $input);
+	}
+
+	public function hashCheck($known, $user)
+	{
+		return hash_equals($known, $user);
 	}
 }
