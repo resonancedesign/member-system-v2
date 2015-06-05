@@ -14,6 +14,7 @@ use ResDesMS2\Helpers\Hash;
 use ResDesMS2\Validation\Validator;
 
 use ResDesMS2\Middleware\BeforeMiddleware;
+use ResDesMS2\Middleware\CSRFMiddleware;
 
 session_cache_limiter(false);
 session_start();
@@ -32,6 +33,7 @@ $app = new Slim([
 ]);
 
 $app->add(new BeforeMiddleware);
+$app->add(new CSRFMiddleware);
 
 $app->configureMode($app->config('mode'), function() use($app) {
 	$app->config = Config::load(INC_ROOT . "/app/config/{$app->mode}.php");

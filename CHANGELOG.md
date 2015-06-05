@@ -1,5 +1,11 @@
 ### HEAD
 
+### 0.0.8 (June 5th, 2015)
+
+*   Added cross-site request forgery security protection
+*   Added log-out functionality
+*   Added profile picture feature using gravatar API
+
 ### 0.0.7 (June 4th, 2015)
 
 *   Added random string generator
