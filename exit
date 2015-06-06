@@ -1,0 +1,76 @@
+[33mcommit 2880b852f8cdb7b97b816ea04f1f2b88e8aa05be[m
+Author: ResonanceDesign <resonance.designs.com@gmail.com>
+Date:   Fri Jun 5 05:22:35 2015 -0600
+
+    *   Added cross-site request forgery security protection
+    *   Added log-out functionality
+    *   Added profile picture feature using gravatar API
+
+[33mcommit cf96f57cd685c5f61a5e8b304c7c79eda78db774[m
+Author: ResonanceDesign <resonance.designs.com@gmail.com>
+Date:   Thu Jun 4 09:03:26 2015 -0600
+
+    *   Added random string generator
+    *   Created extension to add compatibility of the hash_equals function to versions of PHP prior to 5.6
+    *   Added user activation functionality
+    *   Added user level filtering
+
+[33mcommit b775f499f7d4947f8e7106c1ac8014c12c4e3fe7[m
+Author: ResonanceDesign <resonance.designs.com@gmail.com>
+Date:   Wed Jun 3 20:31:23 2015 -0700
+
+    *   Added email sending functionality
+
+[33mcommit dc5f7de617ef59c320e651405ccc660e6b74bc23[m
+Author: ResonanceDesign <resonance.designs.com@gmail.com>
+Date:   Tue Jun 2 06:18:10 2015 -0700
+
+    *   Created registration route with view and form with server-side validation
+    *   Created login route with view and form with server-side validation
+    *   Made navigation responsive to session state
+    *   Created Middleware class to exchange data with Slim
+
+[33mcommit 2c47015569795b2b22855c529f54dfb84062a82b[m
+Author: Rezinunts <mmi.studios@gmail.com>
+Date:   Fri May 29 16:26:02 2015 -0600
+
+    *   Updated dependencies via Composer
+    *   Added password-compat dependency for backwards compatibility(>= 5.3.7) for latest PHP password functions.
+    *   Created 'Hash' helper class for password hashing.
+
+[33mcommit 9b2ebad5989ab0c4296bdf34a6abacbf48730207[m
+Author: Rezinunts <mmi.studios@gmail.com>
+Date:   Fri May 29 16:18:30 2015 -0600
+
+    *   Updated dependencies via Composer
+    *   Added password-compat dependency for backwards compatibility(>= 5.3.7) for latest PHP password functions.
+    *   Created 'Hash' helper class for password hashing.
+
+[33mcommit ee1f97c7ea369c2759846f29aa363319515da382[m
+Author: ResonanceDesign <resonance.designs.com@gmail.com>
+Date:   Thu May 28 21:45:07 2015 -0700
+
+    *   Changed navigation items
+
+[33mcommit 420b5e4583ac5cb39207e01955e303d726d423a8[m
+Author: ResonanceDesign <resonance.designs.com@gmail.com>
+Date:   Tue May 26 19:41:20 2015 -0700
+
+    *   Added autoload statement to composer.json file to automatically load application models and classes when the application is initialized.
+    *   Created user model
+    *   Added configuration option to app initialization file for enabling Twig templating within Slim framework.
+    *   Turned on Twig debug mode and parser extension
+    *   Created base default template and homepage view using Twig templating
+
+[33mcommit fd434da55dd8d98099a9579863f3fe921e811706[m
+Author: ResonanceDesign <resonance.designs.com@gmail.com>
+Date:   Mon May 25 22:30:23 2015 -0700
+
+    INITIAL COMMIT:
+    *   Installed composer
+    *   Installed app dependencies via composer
+    *   Initial setup of directory structure and files
+    *   Created app config files
+    *   Created database and users table
+    *   Added database support to app
+    *   Added member-system-v2.sql file to repository

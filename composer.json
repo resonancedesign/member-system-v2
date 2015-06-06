@@ -13,6 +13,6 @@
         "illuminate/database": "~5.0",
         "alexgarrett/violin": "2.*",
         "ircmaxell/random-lib": "~1.1",
-        "ircmaxell/password-compat": "dev-master"
+        "ircmaxell/password-compat": "1.0.*@dev"
     }
 }
