@@ -44,4 +44,17 @@ Class User extends Eloquent
 
 		return 'http://www.gravatar.com/avatar/' . md5($this->email) . '?s=' . $size . '&d=identicon';
 	}
+
+	public function updateRememberCredentials($ident, $token)
+	{
+		$this->update([
+			'remember_ident' => $ident,
+			'remember_token' => $token
+		]);
+	}
+
+	public function removeRememberCredentials()
+	{
+		$this->updateRememberCredentials(null, null);
+	}
 }
