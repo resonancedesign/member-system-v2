@@ -1,4 +1,17 @@
 {
+	"name": "resonancedesign/member-system-v2",
+	"description": "A simple, straight-forward authentication and user management system.",
+	"type": "project",
+	"homepage": "http://www.resonance-designs.com",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Richard Bakos",
+			"email": "resonance.designs.com@gmail.com",
+			"homepage": "http://www.resonance-designs.com",
+			"role": "Developer"
+		}
+	],
     "autoload": {
         "psr-4": {
             "ResDesMS2\\": "app/ResDesMS2"
