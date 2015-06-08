@@ -33,9 +33,7 @@ class BeforeMiddleware extends Middleware
 			$data = $this->app->getCookie($this->app->config->get('auth.remember'));
 			$credentials = explode('___', $data);
 
-			$trimData = trim($data);
-
-			if (empty($trimData)) || count($credentials) !== 2) {
+			if (empty(trim($data)) || count($credentials) !== 2) {
 				$this->app->response->redirect($this->app->urlFor('home'));
 			} else {
 				$ident = $credentials[0];
